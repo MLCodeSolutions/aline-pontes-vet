@@ -44,6 +44,7 @@ CSS, HTML, JS e ilustrações SVG.
   movimento; todas as animações usam `transform`/`opacity`.
 - Economia de dados / 2G (`is-lite`) desliga marquee, reveals e efeitos
   infinitos para poupar bateria e dados.
+- Na seção “Dicas em vídeo”, iniciar um vídeo pausa automaticamente o outro.
 
 ## Estrutura
 
@@ -83,7 +84,7 @@ Pré-requisito: Node.js 18+.
 node _tools/build.mjs --local
 
 # Build de produção apontando para a tag que será publicada
-node _tools/build.mjs --owner=MLCodeSolutions --repo=aline-pontes-vet --tag=v1.1.0
+node _tools/build.mjs --owner=MLCodeSolutions --repo=aline-pontes-vet --tag=v1.1.1
 ```
 
 O build:
@@ -116,17 +117,17 @@ git add .
 git commit -m "feat: site da Dra. Aline Pontes"
 git push origin main
 
-# 2) Build de produção apontando para a TAG NOVA (ex.: v1.1.0)
-node _tools/build.mjs --owner=MLCodeSolutions --repo=aline-pontes-vet --tag=v1.1.0
+# 2) Build de produção apontando para a TAG NOVA (ex.: v1.1.1)
+node _tools/build.mjs --owner=MLCodeSolutions --repo=aline-pontes-vet --tag=v1.1.1
 
 # 3) Commit B — dist/
 git add dist
-git commit -m "build: dist para Google Sites (v1.1.0)"
+git commit -m "build: dist para Google Sites (v1.1.1)"
 git push origin main
 
 # 4) Tag imutável no commit que já contém o dist
-git tag -a v1.1.0 -m "v1.1.0"
-git push origin v1.1.0
+git tag -a v1.1.1 -m "v1.1.1"
+git push origin v1.1.1
 ```
 
 - O `dist/` é **commitado**.
@@ -156,9 +157,10 @@ git push origin v1.1.0
 8. Teste em **Chrome desktop, Safari iOS e Chrome Android reais**: header
    grudado, menu mobile, WhatsApp, voltar ao topo, âncoras, lightbox, formulário
    de agendamento, player dos vídeos e preloader.
-9. Se a página já estiver publicada com o embed antigo (`v1.0.0`), **substitua**
-   o código incorporado pelo novo `dist/embed.html`, que aponta para `v1.1.0`.
-   Tags são imutáveis; o embed antigo não recebe os vídeos automaticamente.
+9. Se a página já estiver publicada com um embed antigo (`v1.0.0` ou `v1.1.0`),
+   **substitua** o código incorporado pelo novo `dist/embed.html`, que aponta
+   para `v1.1.1`. Tags são imutáveis; o embed antigo não recebe as atualizações
+   automaticamente.
 
 ### Limitações do Sites
 
