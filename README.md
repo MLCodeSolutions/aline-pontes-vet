@@ -16,6 +16,7 @@ servidos pelo jsDelivr a partir de uma tag imutável.
 - Serviços: consultas (clínico geral, pediátrica e geriátrica), vacinação inicial
   e anual, exames laboratoriais, aplicação de medicamentos, testes rápidos,
   corte de unhas e atestado de saúde animal
+- Dicas em vídeo: 2 vídeos + 1 card de CTA, na seção após “Por que em casa”
 
 Os dados de contato ficam em [`src/js/site-config.js`](src/js/site-config.js).
 E-mail, Facebook, depoimentos, preços e formação **não** foram informados e por
@@ -50,9 +51,11 @@ CSS, HTML, JS e ilustrações SVG.
 assets/
   img/art/          ilustrações SVG recoloridas (casa, consulta, vacina, cão, gato, exame, jardim)
   img/brand/        logo completo, marca recortada e versão clara
-  img/client/       foto real usada no hero e no Sobre
+  img/client/       aline-hero.jpg (Df-W recortada) e aline-sobre.jpg (formatura)
+  img/video/        posters dos vídeos de dicas
   img/social/       og-aline.png (logo para compartilhamento)
   img/favicon.svg   favicon (marca)
+  video/            dica-01.mp4 e dica-02.mp4 (servidos pelo jsDelivr)
   fonts/            WOFF2 de texto + lucide.woff2
 src/
   index.html        fonte editável (inclui o <style data-vc-boot>)
@@ -80,7 +83,7 @@ Pré-requisito: Node.js 18+.
 node _tools/build.mjs --local
 
 # Build de produção apontando para a tag que será publicada
-node _tools/build.mjs --owner=MLCodeSolutions --repo=aline-pontes-vet --tag=v1.0.0
+node _tools/build.mjs --owner=MLCodeSolutions --repo=aline-pontes-vet --tag=v1.1.0
 ```
 
 O build:
@@ -113,17 +116,17 @@ git add .
 git commit -m "feat: site da Dra. Aline Pontes"
 git push origin main
 
-# 2) Build de produção apontando para a TAG NOVA (ex.: v1.0.0)
-node _tools/build.mjs --owner=MLCodeSolutions --repo=aline-pontes-vet --tag=v1.0.0
+# 2) Build de produção apontando para a TAG NOVA (ex.: v1.1.0)
+node _tools/build.mjs --owner=MLCodeSolutions --repo=aline-pontes-vet --tag=v1.1.0
 
 # 3) Commit B — dist/
 git add dist
-git commit -m "build: dist para Google Sites (v1.0.0)"
+git commit -m "build: dist para Google Sites (v1.1.0)"
 git push origin main
 
 # 4) Tag imutável no commit que já contém o dist
-git tag -a v1.0.0 -m "v1.0.0"
-git push origin v1.0.0
+git tag -a v1.1.0 -m "v1.1.0"
+git push origin v1.1.0
 ```
 
 - O `dist/` é **commitado**.
@@ -152,7 +155,10 @@ git push origin v1.0.0
    editor).
 8. Teste em **Chrome desktop, Safari iOS e Chrome Android reais**: header
    grudado, menu mobile, WhatsApp, voltar ao topo, âncoras, lightbox, formulário
-   de agendamento e preloader.
+   de agendamento, player dos vídeos e preloader.
+9. Se a página já estiver publicada com o embed antigo (`v1.0.0`), **substitua**
+   o código incorporado pelo novo `dist/embed.html`, que aponta para `v1.1.0`.
+   Tags são imutáveis; o embed antigo não recebe os vídeos automaticamente.
 
 ### Limitações do Sites
 
@@ -181,10 +187,14 @@ git push origin v1.0.0
 
 - **Telefone:** `(85) 98745-0184` foi extraído da arte da cliente; confirmar.
 - **E-mail, Facebook, depoimentos, preços e formação:** não informados — omitidos.
-- **Fotos reais:** usada a foto da cliente com o cão no hero e no Sobre; a
-  galeria continua com ilustrações.
-- **Vídeos:** não usados por peso (13 MB / 3,4 MB). Se a cliente quiser, converter
-  para MP4 leve/WebM e usar apenas na galeria, fora do embed.
+- **Fotos reais:** o hero usa um recorte limpo da `Df-WAlbGhvm.jpg` (sem os
+  textos embutidos da arte original); o Sobre usa a foto de formatura
+  (`CNaLdvYln-b_1.jpg`). A galeria continua com ilustrações.
+- **Vídeos:** 2 MP4s H.264/AAC em 720×1280, com 13 MB e 3,4 MB, usados na seção
+  “Dicas em vídeo”. O terceiro card é um CTA para o WhatsApp, porque não há um
+  terceiro vídeo na pasta. Se a cliente enviar outro, substituir o CTA.
+- **Títulos dos vídeos:** revisar/assistir antes de publicar; os títulos atuais
+  são genéricos e seguros (“Cuidados em casa” e “Proteção que não dói”).
 - **OneDrive + git:** pode haver locks; pause a sincronização durante
   commits/push.
 - Se o campo do Google Sites recusar `dist/index.html`, use `dist/embed.html`.
