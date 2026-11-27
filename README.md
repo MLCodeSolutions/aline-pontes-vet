@@ -62,7 +62,7 @@ dist/
   index.html        completo, CSS/JS inline, assets absolutos no jsDelivr
   index-external.html  alternativa com app.css/app.js + SRI
   app.css / app.js  usados só pela variante external
-  embed.html        loader (~3,5 KB) para o campo do Google Sites
+  embed.html        loader (~2 KB) para o campo do Google Sites
   manifest.json     inventário legível por máquina
   manifest.md       tabela arquivo → URL → tipo → tamanho
 _tools/
@@ -141,9 +141,9 @@ git push origin v1.0.0
 3. Em **Tema**, escolha o cabeçalho mínimo/sem banner e remova logo. Oculte a
    navegação nativa.
 4. **Inserir → Incorporar → aba “Incorporar código”**.
-   - **Recomendado:** cole `dist/embed.html` (~3,5 KB). Ele mostra a marca
+   - **Recomendado:** cole `dist/embed.html` (~2 KB). Ele mostra a marca
      enquanto busca a página e depois carrega o site completo.
-   - **Alternativa:** cole `dist/index.html` (~200 KB inline) se o campo aceitar.
+   - **Alternativa:** cole `dist/index.html` (~211 KB inline) se o campo aceitar.
 5. Selecione o bloco e arraste as alças até as quatro bordas; estique a altura
    ao máximo.
 6. Apague todos os outros blocos/seções: a página deve conter **somente** o
