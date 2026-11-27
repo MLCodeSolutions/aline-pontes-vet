@@ -324,6 +324,18 @@ window.SITE = {
   });
 
   /* Compatibilidade: funções globais usadas no HTML original */
+  /* ---------- Um vídeo por vez ---------- */
+  document.addEventListener('play', function (event) {
+    var current = event.target;
+    if (!current || current.tagName !== 'VIDEO') return;
+
+    document.querySelectorAll('video').forEach(function (video) {
+      if (video !== current && !video.paused) {
+        video.pause();
+      }
+    });
+  }, true);
+
   window.scMenu = function (force) {
     setMenu(force === undefined ? !menu.hasAttribute('data-open') : force);
   };
