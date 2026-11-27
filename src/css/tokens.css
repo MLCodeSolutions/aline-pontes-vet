@@ -1,0 +1,92 @@
+/* ==========================================================================
+   tokens.css — design tokens do site da Dra. Aline Pontes
+   Paleta da marca: azul, rosa e creme (cores do logo).
+   ========================================================================== */
+
+:root {
+  /* Cor — azul / marca */
+  --wine: #1E52AF;
+  --wine-deep: #123B84;
+  --wine-bright: #2A5FC0;
+  --wine-muted: #1C4A9E;
+  --wine-soft: #2C5FA8;
+
+  /* Cor — cremes, rosas e areias */
+  --cream: #FBF8F6;
+  --cream-2: #F4EEF1;
+  --peach: #F9D9E5;
+  --peach-light: #FCEAF1;
+  --sand: #EADDE6;
+  --sand-deep: #DCC7D5;
+
+  /* Cor — texto */
+  --ink: #17233D;
+  --ink-2: #26334B;
+  --ink-3: #35435C;
+  --ink-4: #44526B;
+
+  /* Cor — acentos */
+  --gold: #DE3976;        /* estrelas / detalhes (rosa da marca) */
+  --moss: #2C5FA8;        /* azul de apoio */
+  --moss-light: #E6EEFB;  /* fundo azul suave */
+  --moss-mid: #1E4A96;    /* hover azul */
+  --moss-chip: #D7E4F7;   /* chip azul */
+
+  --white: #ffffff;
+
+  /* Tipografia */
+  --font-title: "Bricolage Grotesque", "Hanken Grotesk", system-ui, sans-serif;
+  --font-body: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-serif: "Instrument Serif", Georgia, serif;
+  --font-icon: "lucide";
+
+  --fs-body: 17px;
+  --lh-body: 1.6;
+
+  /* Raios */
+  --r-9: 9px;
+  --r-12: 12px;
+  --r-13: 13px;
+  --r-14: 14px;
+  --r-16: 16px;
+  --r-18: 18px;
+  --r-20: 20px;
+  --r-24: 24px;
+  --r-28: 28px;
+  --r-32: 32px;
+  --r-36: 36px;
+  --r-40: 40px;
+  --r-pill: 99px;
+
+  /* Layout */
+  --container: 1320px;
+  --gutter: clamp(16px, 3vw, 32px);
+  --gap: 14px;
+  --section-space: clamp(80px, 10vw, 140px);
+  --header-offset: 96px;
+
+  /* Movimento */
+  --ease: 0.25s ease;
+  --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --dur-reveal: 700ms;
+  --dur-hover: 240ms;
+  --fade-time: 1.4s;
+
+  /* Sombras */
+  --shadow-hero: 0 12px 32px -8px rgba(249, 217, 229, 0.5);
+  --shadow-video: 0 30px 60px -30px rgba(18, 59, 132, 0.5);
+  --shadow-club-video: 0 40px 80px -30px rgba(0, 0, 0, 0.6);
+  --shadow-card-hover: 0 24px 48px -24px rgba(30, 82, 175, 0.35);
+  --shadow-qr: 0 12px 30px -12px rgba(18, 59, 132, 0.4);
+  --shadow-mobile-bar: 0 16px 40px -10px rgba(18, 59, 132, 0.6);
+
+  /* Breakpoints documentados (CSS não suporta variáveis em media query):
+       1180px — esconde nav desktop, mostra burger
+       1100px — grid de 4 colunas → 2
+       1024px — padding do rodapé (Elementor)
+        900px — bento → 1 coluna, header mobile, centralização, barra fixa
+        767px — padding do rodapé (Elementor)
+        600px — grid de 2 → 1
+        520px — esconde o texto "Agendar"
+   */
+}
